@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrevista com Symaz - Bixacast 2025</title>
-    <!-- Preconnect para fontes externas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Entrevista com Bicalho - Bixacast 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Inline CSS para melhor performance -->
     <style>
-        /* Seu CSS atual permanece exatamente igual */
         * {
             margin: 0;
             padding: 0;
@@ -23,32 +18,1138 @@
             background: linear-gradient(135deg, #0c1226, #1a2a6c);
             color: #f0f0f0;
             line-height: 1.6;
+            padding: 20px;
             min-height: 100vh;
-            overflow-x: hidden;
         }
         
-        /* ... (todo o restante do seu CSS permanece igual) ... */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(15, 22, 40, 0.92);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(74, 111, 197, 0.4);
+        }
+        
+        header {
+            background: linear-gradient(90deg, #0a1120, #152547);
+            padding: 35px 40px;
+            text-align: center;
+            border-bottom: 3px solid #4a6fc5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(74, 111, 197, 0.15) 0%, transparent 40%);
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(90deg, #8da2fb, #4a6fc5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #b5c4ff;
+            max-width: 700px;
+            margin: 0 auto 15px;
+            font-weight: 300;
+        }
+        
+        .date {
+            font-size: 1.1rem;
+            color: #8da2fb;
+            font-weight: 300;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 18px 20px;
+            background: rgba(10, 15, 35, 0.8);
+            border-bottom: 1px solid rgba(74, 111, 197, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .category-btn {
+            background: rgba(74, 111, 197, 0.25);
+            border: 1px solid rgba(100, 140, 230, 0.3);
+            color: #c5d0ff;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: linear-gradient(90deg, #4a6fc5, #6a82fb);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 111, 197, 0.3);
+        }
+        
+        .segment {
+            padding: 30px 40px;
+            border-bottom: 1px solid rgba(74, 111, 197, 0.2);
+            background: rgba(18, 26, 50, 0.6);
+        }
+        
+        .segment:nth-child(2n) {
+            background: rgba(15, 22, 40, 0.6);
+        }
+        
+        .segment:last-child {
+            border-bottom: none;
+        }
+        
+        .segment-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #4a6fc5;
+            color: #8da2fb;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .segment-title i {
+            font-size: 1.5rem;
+            color: #6a82fb;
+            background: rgba(74, 111, 197, 0.2);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 18px;
+        }
+        
+        .question-item {
+            padding: 20px;
+            background: rgba(30, 40, 70, 0.7);
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            border-left: 4px solid #4a6fc5;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .question-item:hover {
+            background: rgba(40, 52, 90, 0.9);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .question-checkbox {
+            margin-right: 15px;
+            margin-top: 5px;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            accent-color: #4a6fc5;
+        }
+        
+        .question-text {
+            flex: 1;
+            font-size: 1.08rem;
+            font-weight: 400;
+            padding-right: 10px;
+        }
+        
+        .completed .question-text {
+            text-decoration: line-through;
+            color: #a0aec0;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background: rgba(10, 15, 35, 0.8);
+            font-size: 1.1rem;
+        }
+        
+        .progress-container {
+            padding: 0 40px;
+            background: rgba(10, 15, 35, 0.8);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: rgba(74, 111, 197, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4a6fc5, #6a82fb);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .counter {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #8da2fb;
+            margin-top: 8px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 25px 0;
+            background: rgba(10, 15, 35, 0.8);
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(90deg, #4a6fc5, #6a82fb);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(74, 111, 197, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #4a6fc5;
+            color: #c5d0ff;
+        }
+        
+        .category-counter {
+            background: rgba(74, 111, 197, 0.2);
+            border-radius: 12px;
+            padding: 3px 10px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 1000px) {
+            .questions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header, .segment, .stats {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .segment-title {
+                font-size: 1.6rem;
+            }
+            
+            .question-text {
+                font-size: 1.05rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.9rem;
+            }
+            
+            .segment-title {
+                font-size: 1.4rem;
+            }
+            
+            .question-item {
+                padding: 18px;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .categories {
+                gap: 8px;
+            }
+            
+            .category-btn {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Seu HTML atual permanece exatamente igual -->
     <div class="container">
-        <!-- Sidebar para Chat -->
-        <div class="sidebar" id="chat-sidebar">
-            <!-- ... conteúdo da sidebar ... -->
+        <header>
+            <div class="header-content">
+                <h1>Entrevista com Bicalho</h1>
+                <div class="subtitle">Bixacast 2025 - Comédia, Stand-Up e o Futuro do Humor</div>
+                <div class="date">
+                    <i class="fas fa-calendar-alt"></i>
+                    20 de Julho de 2025
+                </div>
+            </div>
+        </header>
+        
+        <div class="categories">
+            <button class="category-btn active" data-category="all">
+                <i class="fas fa-layer-group"></i> Todas
+                <span class="category-counter">140</span>
+            </button>
+            <button class="category-btn" data-category="quebra-gelo">
+                <i class="fas fa-handshake"></i> Quebra-gelo
+                <span class="category-counter">20</span>
+            </button>
+            <button class="category-btn" data-category="genericas">
+                <i class="fas fa-question-circle"></i> Genéricas
+                <span class="category-counter">20</span>
+            </button>
+            <button class="category-btn" data-category="pessoa">
+                <i class="fas fa-user"></i> Sobre a Pessoa
+                <span class="category-counter">20</span>
+            </button>
+            <button class="category-btn" data-category="streamer">
+                <i class="fas fa-video"></i> Streamer
+                <span class="category-counter">20</span>
+            </button>
+            <button class="category-btn" data-category="comedia">
+                <i class="fas fa-microphone-alt"></i> Comédia Stand-Up
+                <span class="category-counter">20</span>
+            </button>
+            <button class="category-btn" data-category="futuro">
+                <i class="fas fa-rocket"></i> O Futuro do Humor
+                <span class="category-counter">20</span>
+            </button>
+            <button class="category-btn" data-category="outras">
+                <i class="fas fa-ellipsis-h"></i> Outras
+                <span class="category-counter">20</span>
+            </button>
         </div>
         
-        <!-- Conteúdo Principal -->
-        <div class="main-content" id="main-content">
-            <!-- ... todo o restante do seu conteúdo ... -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            <div class="counter">
+                <span id="completed-count">0 de 140 perguntas respondidas</span>
+                <span id="progress-text">Progresso: 0%</span>
+            </div>
+        </div>
+        
+        <!-- Quebra-gelo -->
+        <div class="segment" data-category="quebra-gelo">
+            <h2 class="segment-title">
+                <i class="fas fa-handshake"></i>
+                Quebra-gelo
+            </h2>
+            <div class="questions-grid">
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se o teu humor fosse um animal, qual seria e porquê?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o meme favorito que surgiu na tua comunidade?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se pudesses jantar com 3 comediantes, quem seriam?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi a coisa mais inesperada que aconteceu num espetáculo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual cidade portuguesa tem o público mais engraçado?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se o teu canal de humor fosse um filme, qual seria o título?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual superpoder seria mais útil para fazer comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua expressão preferida que surgiu nos teus shows?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se tivesses que descrever o teu humor com uma cor, qual seria?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi o momento mais engraçado que já viveste em palco?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se o teu estilo de humor tivesse um slogan, qual seria?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que objeto do teu dia a dia representa melhor a tua comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se pudesses criar uma nova tradição para os teus espetáculos, qual seria?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o teu snack preferido antes de subir ao palco?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se o teu humor fosse uma música, qual seria?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi a interação mais inusitada com um fã?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se pudesses adicionar um elemento bizarro aos teus shows, o que seria?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua estação do ano preferida para fazer comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se pudesses ter um animal de estimação no palco, qual seria?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua bebida preferida para começar o dia?</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Perguntas Genéricas -->
+        <div class="segment" data-category="genericas">
+            <h2 class="segment-title">
+                <i class="fas fa-question-circle"></i>
+                Perguntas Genéricas
+            </h2>
+            <div class="questions-grid">
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como é um dia normal na tua vida?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que te mantém motivado depois de tantos anos?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como geres a pressão de ser uma figura pública?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi o momento mais gratificante nesta jornada?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que mais te surpreendeu no mundo da comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como defines sucesso para a tua carreira?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o maior desafio que enfrentas atualmente?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como equilibras a vida pessoal e a carreira?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi a lição mais valiosa que aprendeste?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como reages a críticas construtivas?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que fazes para recarregar energias?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua filosofia de trabalho?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como manténs a criatividade em alta?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que mais valorizas na tua comunidade?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como lidas com momentos de desmotivação?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi a decisão mais difícil que já tomaste?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como defines o perfil do público ideal?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que fazes para manter os fãs engajados?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua maior fonte de inspiração?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como celebras conquistas importantes?</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sobre a Pessoa -->
+        <div class="segment" data-category="pessoa">
+            <h2 class="segment-title">
+                <i class="fas fa-user"></i>
+                Sobre a Pessoa
+            </h2>
+            <div class="questions-grid">
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Fora do palco e streaming, quais são os teus hobbies?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como a tua família vê o teu trabalho com comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua maior fraqueza e como tentas superá-la?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que gostarias de aprender ou melhorar em ti mesmo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como descreverias a tua personalidade em três palavras?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o teu livro ou filme preferido e porquê?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como era o teu eu de 15 anos em comparação com hoje?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua maior conquista pessoal fora da comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que conselho darias ao teu eu mais jovem?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como defines o teu estilo de comunicação?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o teu maior medo em relação à carreira?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que te faz sentir mais orgulhoso de ti mesmo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como manténs o equilíbrio emocional?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua viagem dos sonhos?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que hábito mudou positivamente a tua vida?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como lidaste com os momentos mais difíceis?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que mais valorizas nas tuas relações pessoais?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua filosofia de vida?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como desligas do trabalho?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que impacto esperas ter nas pessoas à tua volta?</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hábitos como Streamer -->
+        <div class="segment" data-category="streamer">
+            <h2 class="segment-title">
+                <i class="fas fa-video"></i>
+                Hábitos como Streamer
+            </h2>
+            <div class="questions-grid">
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como preparas as tuas sessões de streaming?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Tens algum ritual antes de começar uma stream?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como decides qual conteúdo transmitir ao vivo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que fazes para manter a calma em situações imprevistas durante live?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi a situação mais difícil que enfrentaste numa live?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como geres o tempo entre streams e criação de conteúdo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o teu setup de streaming? Algo único?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como reages a comentários negativos durante as streams?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi o momento mais emocionante que viveste em stream?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como preparas conteúdos especiais para o canal?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que consideras mais importante numa transmissão ao vivo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como escolhes os temas para as tuas streams?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi a interação mais marcante com um viewer?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como evitas o burnout com tantas horas de streaming?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que aprendeste sobre comunicação através do streaming?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o teu maior desafio como streamer?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como manténs a audiência engajada durante sessões longas?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que mudaste na tua abordagem desde que começaste?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como lidas com imprevistos técnicos durante as lives?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua meta para o canal nos próximos anos?</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comédia Stand-Up -->
+        <div class="segment" data-category="comedia">
+            <h2 class="segment-title">
+                <i class="fas fa-microphone-alt"></i>
+                Comédia Stand-Up
+            </h2>
+            <div class="questions-grid">
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi a primeira vez que subiste a palco para fazer comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como nasceu o nome "Bicalho" e o estilo que criaste?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi o momento mais embaraçoso que já tiveste em palco?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como lidas com piadas que não resultam ao vivo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o processo criativo por trás de um dos teus bits?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Sentes que o humor português mudou nos últimos anos?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como reages quando alguém se sente ofendido por uma piada?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Tens alguma rotina antes de entrar em palco?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Já alguma vez improvisaste um espetáculo inteiro?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como transformas momentos do dia a dia em comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual foi o público mais difícil com quem já atuaste?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o maior elogio que já recebeste após uma atuação?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Tens algum espetáculo que consideres o teu favorito?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Há algum tema que evitas nas tuas atuações?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual a tua opinião sobre limites no humor?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como equilibras humor e responsabilidade social?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que piada tua se tornou viral sem esperares?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Já alguma vez tiveste um bloqueio criativo antes de um show?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual a maior diferença entre fazer stand-up e conteúdo para redes?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que comediantes portugueses te inspiram?</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- O Futuro do Humor -->
+        <div class="segment" data-category="futuro">
+            <h2 class="segment-title">
+                <i class="fas fa-rocket"></i>
+                O Futuro do Humor
+            </h2>
+            <div class="questions-grid">
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como vês o futuro do stand-up em Portugal?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que formatos gostarias de experimentar fora do palco?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Há alguma personagem ou sketch que queiras desenvolver?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que podemos esperar do Bicalho nos próximos anos?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Há planos para lançar um solo especial ou espetáculo completo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Vês-te a escrever para televisão ou cinema?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o teu maior sonho como comediante?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Gostarias de fazer um podcast de humor regularmente?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que papel achas que a inteligência artificial pode ter na comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Achas que o humor digital vai substituir o stand-up ao vivo?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Tens algum projeto secreto em andamento?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como imaginas o teu conteúdo daqui a 5 anos?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Gostavas de fazer uma tour internacional?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que mensagem queres deixar para futuros comediantes?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que te assusta mais no crescimento da tua carreira?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se tivesses liberdade criativa total, o que criarias?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Planeias ensinar ou formar novos humoristas?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como esperas que o público se lembre de ti no futuro?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Há alguma colaboração que gostarias muito de fazer?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se pudesses mudar algo no panorama do humor em Portugal, o que seria?</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Outras Perguntas -->
+        <div class="segment" data-category="outras">
+            <h2 class="segment-title">
+                <i class="fas fa-ellipsis-h"></i>
+                Outras Perguntas
+            </h2>
+            <div class="questions-grid">
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua opinião sobre o estado atual da comédia em Portugal?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que dirias a alguém que está a começar no mundo do stand-up?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como vês a relação entre comediantes e comunidades online?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o maior equívoco sobre fazer comédia profissionalmente?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Se pudesses dar um conselho ao teu "eu" de 5 anos atrás, qual seria?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como vês o impacto da comédia na vida das pessoas?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o maior desafio do ecossistema de humor em Portugal?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como avalias o crescimento da tua comunidade nos últimos anos?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que falta ao cenário de humor português?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como vês o papel das redes sociais na comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua visão sobre competição entre comediantes?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como promoverias o stand-up a quem nunca experimentou?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é o aspecto mais negligenciado na carreira de comediante?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como avalias o impacto do streaming no crescimento do humor?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua opinião sobre festivais de comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como vês o futuro das artes cénicas em Portugal?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">O que mais te preocupa no desenvolvimento da tua carreira?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Como defines o equilíbrio entre humor sério e diversão?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Qual é a tua visão sobre a profissionalização da comédia?</div>
+                </div>
+                <div class="question-item">
+                    <input type="checkbox" class="question-checkbox">
+                    <div class="question-text">Que mensagem gostarias de deixar para os teus fãs?</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn" id="select-all">
+                <i class="fas fa-check-double"></i> Selecionar Todas
+            </button>
+            <button class="btn btn-outline" id="deselect-all">
+                <i class="fas fa-times"></i> Desmarcar Todas
+            </button>
+            <button class="btn" id="export-btn">
+                <i class="fas fa-file-export"></i> Exportar Selecionadas
+            </button>
+        </div>
+        
+        <div class="stats">
+            <div id="completed-count">0 de 140 perguntas respondidas</div>
+            <div id="progress-text">Progresso: 0%</div>
         </div>
     </div>
 
-    <!-- Script no final do body para melhor performance -->
     <script>
-        // Seu JavaScript atual permanece exatamente igual
         document.addEventListener('DOMContentLoaded', function() {
-            // Todas as suas funções e event listeners
+            const checkboxes = document.querySelectorAll('.question-checkbox');
+            const progressFill = document.getElementById('progress');
+            const completedCount = document.getElementById('completed-count');
+            const progressText = document.getElementById('progress-text');
+            const totalQuestions = checkboxes.length;
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const segments = document.querySelectorAll('.segment');
+            const selectAllBtn = document.getElementById('select-all');
+            const deselectAllBtn = document.getElementById('deselect-all');
+            const exportBtn = document.getElementById('export-btn');
+            
+            // Atualizar progresso
+            function updateProgress() {
+                const completed = document.querySelectorAll('.question-checkbox:checked').length;
+                const percentage = Math.round((completed / totalQuestions) * 100);
+                
+                progressFill.style.width = percentage + '%';
+                completedCount.textContent = completed + ' de ' + totalQuestions + ' perguntas respondidas';
+                progressText.textContent = 'Progresso: ' + percentage + '%';
+                
+                // Adicionar/remover classe de completado
+                checkboxes.forEach(checkbox => {
+                    const questionItem = checkbox.closest('.question-item');
+                    if (checkbox.checked) {
+                        questionItem.classList.add('completed');
+                    } else {
+                        questionItem.classList.remove('completed');
+                    }
+                });
+            }
+            
+            // Filtro por categoria
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.dataset.category;
+                    
+                    // Atualizar botões ativos
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Mostrar/esconder segmentos
+                    segments.forEach(segment => {
+                        if (category === 'all' || segment.dataset.category === category) {
+                            segment.style.display = 'block';
+                        } else {
+                            segment.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Selecionar todas
+            selectAllBtn.addEventListener('click', () => {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+                updateProgress();
+            });
+            
+            // Desmarcar todas
+            deselectAllBtn.addEventListener('click', () => {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                updateProgress();
+            });
+            
+            // Exportar selecionadas
+            exportBtn.addEventListener('click', () => {
+                const selectedQuestions = [];
+                document.querySelectorAll('.question-checkbox:checked').forEach(checkbox => {
+                    selectedQuestions.push(checkbox.nextElementSibling.textContent);
+                });
+                
+                if (selectedQuestions.length === 0) {
+                    alert('Por favor, selecione pelo menos uma pergunta para exportar.');
+                    return;
+                }
+                
+                const content = "Perguntas Selecionadas para Bicalho:\n\n" + selectedQuestions.join('\n\n');
+                const blob = new Blob([content], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'perguntas-bicalho-selecionadas.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+            
+            // Inicializar eventos
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+            
+            // Atualizar progresso inicial
+            updateProgress();
         });
     </script>
 </body>
